@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        O 'parent' do Spring Boot define as VERSÕES de todas as dependências
+        compatíveis entre si. É por isso que as <dependency> abaixo não precisam
+        declarar <version>: o parent já decidiu por nós.
+    -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.3.4</version>
+        <relativePath/>
+    </parent>
+
+    <!-- As TRÊS COORDENADAS que identificam este projeto -->
+    <groupId>com.renatochong</groupId>
+    <artifactId>curso-api</artifactId>
+    <version>1.0.0</version>
+    <name>curso-api</name>
+    <description>API REST de exemplo do Modulo 6 do curso de Java</description>
+
+    <properties>
+        <java.version>21</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+
+        <!--
+            STARTER WEB: traz de uma vez o Tomcat embutido, o Spring MVC
+            e o Jackson (que converte objeto Java em JSON automaticamente).
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--
+            STARTER DATA JPA: traz o Hibernate e o Spring Data,
+            responsáveis por transformar interfaces em repositórios funcionais.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!--
+            VALIDATION: habilita @NotBlank, @Positive e @Valid
+            para validar os dados que chegam pela requisição.
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!--
+            H2: banco de dados em MEMÓRIA.
+            Escolhido de propósito para o curso: não exige instalar nada e o
+            projeto roda de primeira. Em produção, troque pelo driver do
+            PostgreSQL (veja o README) e nada mais no código muda.
+        -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Driver do PostgreSQL, comentado. Descomente ao migrar do H2.
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        -->
+
+        <!-- JUnit 5, Mockito e utilitários de teste do Spring -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin que permite 'mvn spring-boot:run' e gera o .jar executável -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -1,0 +1,42 @@
+# Compilados do Java
+*.class
+
+# Empacotamento e distribuicao
+*.jar
+*.war
+*.ear
+
+# Maven (projeto do modulo 6)
+target/
+# O wrapper e a excecao a regra "*.jar" acima: sem ele o mvnw nao roda em
+# quem clonar o repo, que e justamente a graca de ter o wrapper.
+!modulo6/projeto-spring/.mvn/wrapper/maven-wrapper.jar
+
+# Empacotador: tudo aqui e gerado, so as fontes ficam versionadas
+dist/
+empacotador/wv2/
+empacotador/curso.html
+empacotador/conteudo.json
+empacotador/WebView2Loader.dll
+empacotador/*.o
+empacotador/*.exe
+
+# Logs e despejos de erro da JVM
+*.log
+hs_err_pid*
+replay_pid*
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.ipr
+*.iws
+.classpath
+.project
+.settings/
+*.code-workspace
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

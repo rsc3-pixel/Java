@@ -1,0 +1,18 @@
+# Artefatos de build do Maven: gerados a cada 'mvnw package', nunca versionados
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Logs
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
