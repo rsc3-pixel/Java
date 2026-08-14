@@ -1,0 +1,43 @@
+#include <windows.h>
+
+#define ID_HTML   101
+#define ID_DLL    102
+#define ID_ICONE  103
+
+// Conteudo embutido no executavel
+ID_HTML  RCDATA "curso.html"
+ID_DLL   RCDATA "WebView2Loader.dll"
+ID_ICONE ICON   "curso.ico"
+
+// Solicita os controles visuais modernos e declara compatibilidade com
+// Windows 7 a 11, alem de marcar o programa como ciente de DPI.
+1 RT_MANIFEST "app.manifest"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+FILEFLAGSMASK   0x3fL
+FILEFLAGS       0x0L
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName",      "Renato Chong"
+            VALUE "FileDescription",  "Curso de Java: dos fundamentos ao Spring Boot"
+            VALUE "FileVersion",      "1.0.0.0"
+            VALUE "InternalName",     "curso-java"
+            VALUE "OriginalFilename", "Curso de Java.exe"
+            VALUE "ProductName",      "Curso de Java"
+            VALUE "ProductVersion",   "1.0.0.0"
+            VALUE "LegalCopyright",   "Material de estudo de uso livre"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
