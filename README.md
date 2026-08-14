@@ -21,6 +21,21 @@ Cada módulo contém teoria explicada, dois exemplos comentados linha a linha, d
 
 ---
 
+## Ler o curso como aplicativo
+
+Para estudar sem clonar nada, o curso também vira um aplicativo do Windows, com menu, busca e tema claro/escuro:
+
+```powershell
+cd empacotador
+.\compilar.ps1
+```
+
+Saem dois arquivos em `dist/`: o programa avulso e um instalador para compartilhar. Os detalhes estão no [README do empacotador](./empacotador/README.md).
+
+Quem recebe o aplicativo **não precisa de JDK** para ler o curso, só para rodar os exemplos.
+
+---
+
 ## Como rodar os exemplos
 
 **Pré-requisito:** JDK 17 ou superior.
