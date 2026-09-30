@@ -19,6 +19,7 @@ MODULOS = [
     ("Módulo 4", "Erros e Arquivos", "modulo4"),
     ("Módulo 5", "Java Moderno (8+)", "modulo5"),
     ("Módulo 6", "Spring Boot", "modulo6"),
+    ("Módulo 7", "Revisão: Prova de POO", "modulo7"),
 ]
 
 PARTES = [

@@ -1,6 +1,6 @@
 # ☕ Curso de Java: do básico ao Spring Boot
 
-Repositório de estudos de Java estruturado em 6 módulos progressivos, do primeiro `System.out.println` até uma API REST funcional com Spring Boot e banco de dados.
+Repositório de estudos de Java estruturado em 6 módulos progressivos, do primeiro `System.out.println` até uma API REST funcional com Spring Boot e banco de dados, mais um módulo extra de revisão para a prova de POO da CESAR School.
 
 **➡️ Comece pelo [roadmap.md](./roadmap.md), que é o índice completo do curso.**
 
@@ -16,6 +16,7 @@ Repositório de estudos de Java estruturado em 6 módulos progressivos, do prime
 | [4](./modulo4/) | Exceções e Arquivos | `try/catch`, exceções customizadas, leitura e escrita de arquivos |
 | [5](./modulo5/) | Java Moderno | generics, lambdas, Streams, `Optional`, `java.time` |
 | [6](./modulo6/) | Spring Boot | Maven, JDBC, JPA, arquitetura em camadas, API REST |
+| [7](./modulo7/) | Revisão: Prova de POO | as listas e a prova de POO da CESAR School, com o mapa de onde estudar cada assunto |
 
 Cada módulo contém teoria explicada, dois exemplos comentados linha a linha, dois desafios guiados para você completar, uma lista de 50 exercícios de implementação e um simulado de 50 questões com gabarito comentado.
 

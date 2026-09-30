@@ -12,6 +12,7 @@ Este roteiro de estudos serve para guiar seu aprendizado de Java estruturando o 
 | [4](#️-módulo-4-tratamento-de-erros-e-manipulação-de-arquivos) | Exceções e Arquivos | Módulo 2 | criar sistemas resilientes com dados que persistem |
 | [5](#-módulo-5-java-moderno-java-8-e-recursos-avançados) | Java Moderno | Módulos 3 e 4 | escrever código declarativo com Streams e lambdas |
 | [6](#-módulo-6-ecossistema-profissional-e-spring-boot) | Spring Boot | todos | construir APIs REST conectadas a banco de dados |
+| [7](#-módulo-7-revisão-para-a-prova-de-poo) | Revisão: Prova de POO | Módulo 2 | resolver as questões da prova de POO da CESAR School |
 
 **Estrutura de cada módulo:** teoria completa, dois exemplos comentados, dois desafios guiados para completar, uma lista de 50 exercícios de implementação e um simulado de 50 questões com gabarito comentado.
 
@@ -133,3 +134,24 @@ Este roteiro de estudos serve para guiar seu aprendizado de Java estruturando o 
 
 > [!NOTE]
 > Este módulo não tem arquivos `.java` soltos: uma aplicação Spring exige um projeto Maven com dependências. A pasta `projeto-spring/` traz uma API REST completa que roda com um único comando, sem instalar Maven nem banco de dados.
+
+---
+
+## 🎯 Módulo 7: Revisão para a Prova de POO
+**Objetivo:** Revisar para a primeira prova de POO da CESAR School (prof. Maurício Braga). Não traz matéria nova: aprofunda os pontos que a prova cobrou e que os outros módulos só tocam de passagem.
+*   **Tópicos:**
+    *   Mapa de cada slide e lista do professor para a seção do curso onde o assunto está.
+    *   Pacotes e a regra da URL invertida.
+    *   Construtores na herança e o `super()` invisível.
+    *   Sobrecarga contra sobrescrita, e por que `private`, `static` e `final` ficam fora do polimorfismo.
+    *   Conversões: o que compila, o que não compila e o que lança `ClassCastException`.
+    *   Anotações próprias com `@Retention` e `@Target`, e generics das listas (`Caixa<T>`, `Par<K, V>`).
+*   **Recursos do Módulo:**
+    *   📖 [Teoria e mapa de estudo do Módulo 7](./modulo7/teoria.md)
+    *   💻 [Exemplo de Código 1 (O que será impresso?)](./modulo7/Exemplo1.java) | [Exemplo de Código 2 (A discursiva resolvida e anotação própria)](./modulo7/Exemplo2.java)
+    *   📝 [Desafio Guiado 1 (Lista 3: Pedido, Autenticavel e anotação)](./modulo7/Exercicio1.java) | [Desafio Guiado 2 (Lista 3: Generics)](./modulo7/Exercicio2.java)
+    *   ✏️ [As Listas do Professor (22 Questões)](./modulo7/lista_exercicios.md)
+    *   ✏️ [Simulado no Formato da Prova (30 Questões)](./modulo7/lista_exercicios_prep.md)
+
+> [!NOTE]
+> Diferente dos outros módulos, as listas deste têm 22 e 30 questões, não 50: o módulo foi feito para caber na véspera da prova.
