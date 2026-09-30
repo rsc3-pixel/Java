@@ -3,7 +3,9 @@ package modulo7;
 /*
  * EXEMPLO 1 DO MÓDULO 7: "O que será impresso?"
  *
- * As questões de "prever a saída" da prova, rodando de verdade.
+ * As questões de "prever a saída" no estilo da prova do período passado,
+ * rodando de verdade. A prova deste período vai ser outra, mas o raciocínio
+ * cobrado é o mesmo.
  * Antes de executar, PEGUE UM PAPEL e escreva o que você acha que cada bloco
  * imprime. Depois compare. Errar aqui é barato; errar amanhã custa ponto.
  *
@@ -13,7 +15,7 @@ package modulo7;
  */
 
 // ============================================================
-// BLOCO 1: a questão 04 da prova, exatamente como caiu
+// BLOCO 1: a questão 04 da prova do período passado, como caiu
 // ============================================================
 class Alfa {
     // private: fica FORA do polimorfismo. A chamada dentro de execute()
@@ -109,7 +111,7 @@ class ExemploStatic {
 public class Exemplo1 {
     public static void main(String[] args) {
 
-        System.out.println("=== BLOCO 1: showA private (a questão da prova) ===");
+        System.out.println("=== BLOCO 1: showA private (questão do período passado) ===");
         Beta obj = new Beta();
         obj.execute();
         System.out.println();

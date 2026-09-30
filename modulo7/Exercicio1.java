@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * DESAFIO 1 DO MÓDULO 7: Lista 3 do professor, exercícios 1, 2 e 3
  *
  * Objetivo:
- * Praticar o trio que mais cai na discursiva: sobrecarga de construtores,
+ * Praticar o trio que a discursiva do período passado cobrou: sobrecarga de construtores,
  * @Override obrigatório e interface como contrato. De bônus, criar a sua
  * própria anotação.
  *

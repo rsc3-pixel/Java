@@ -1,6 +1,6 @@
-# Lista de Exercícios: Módulo 7 - As Listas do Professor (22 Questões)
+# Lista de Exercícios: Módulo 7 - As Listas do Professor (25 Questões)
 
-Aqui estão as **três listas oficiais** de POO do prof. Maurício, reorganizadas, mais algumas questões no formato da prova. Elas são a melhor previsão do que cai: a discursiva da prova (a classe `Musica`) é praticamente o exercício 1 da lista 3 com outro nome.
+Aqui estão as **três listas oficiais** de POO do prof. Maurício, reorganizadas, mais algumas questões no formato da prova. As listas são a melhor pista do que o professor valoriza: a discursiva da prova do **período passado** (a classe `Musica`) era praticamente o exercício 1 da lista 3 com outro nome. A prova deste período vai ser outra, mas o estilo tende a se repetir.
 
 Crie seus arquivos na pasta `modulo7/respostas/` com o nome `ExercicioXX.java`.
 
@@ -57,12 +57,12 @@ Responda por escrito, em três ou quatro linhas cada. A prova pode ter pergunta 
 
 ---
 
-## Grupo D: No formato da prova (19 a 22)
+## Grupo D: No estilo da prova do período passado (19 a 22)
 
-19. ⭐ **A discursiva da prova:** Sem olhar o [Exemplo 2](../modulo7/Exemplo2.java), escreva a classe `Musica` que herda de `class Midia { }`, no pacote do sistema MusicBox (`www.soundwave.com`), com nome e duração em segundos, encapsulamento, dois construtores (só o nome, com duração zero; e nome mais duração), `@Override` e `toString()`. Depois confira com o [checklist da teoria](../modulo7/teoria.md).
+19. ⭐ **A discursiva do período passado:** Sem olhar o [Exemplo 2](../modulo7/Exemplo2.java), escreva a classe `Musica` que herda de `class Midia { }`, no pacote do sistema MusicBox (`www.soundwave.com`), com nome e duração em segundos, encapsulamento, dois construtores (só o nome, com duração zero; e nome mais duração), `@Override` e `toString()`. Depois confira com o [checklist da teoria](../modulo7/teoria.md).
 20. ⭐ **Variação da discursiva:** Mesmo sistema, agora a classe `Podcast`, que também herda de `Midia`, com título, apresentador e número do episódio. Três construtores: só o título (apresentador `"Desconhecido"`, episódio 1); título e apresentador (episódio 1); e completo. Os dois menores devem delegar para o completo com `this(...)`.
 21. **Prever a saída:** Escreva num papel a saída do [Exemplo1.java](../modulo7/Exemplo1.java) **antes** de rodá-lo. Depois rode e marque onde errou.
-22. **Montando a hierarquia da questão 02:** Crie as classes `Dispositivo`, `Smartphone`, `SmartphoneAndroid`, `Computador` e `Notebook`. No `main`, escreva as sete atribuições abaixo, preveja quais compilam e confirme com o compilador:
+22. **Montando a hierarquia da questão 02 do período passado:** Crie as classes `Dispositivo`, `Smartphone`, `SmartphoneAndroid`, `Computador` e `Notebook`. No `main`, escreva as sete atribuições abaixo, preveja quais compilam e confirme com o compilador:
     ```java
     Smartphone s1 = new Object();
     Object o1 = new Computador();
@@ -75,6 +75,14 @@ Responda por escrito, em três ou quatro linhas cada. A prova pode ter pergunta 
 
 ---
 
+## Grupo E: Temas que não caíram no período passado (23 a 25)
+
+23. ⭐ **Classe abstrata:** Crie a classe abstrata `Funcionario` com nome e salário base, um construtor e o método abstrato `double calcularPagamento()`. Crie `Horista` (horas × valor da hora) e `Mensalista` (salário base). No `main`, guarde os dois numa `List<Funcionario>` e some os pagamentos num laço, sem nenhum `instanceof`.
+24. **Interface e herança juntas:** Crie a interface `Tributavel` com `double calcularImposto()`. Faça só o `Mensalista` implementá-la, **mantendo** o `extends Funcionario`. Escreva a declaração completa da classe.
+25. **`equals` e `hashCode`:** Na classe `Pedido` (questão 12), sobrescreva `equals` e `hashCode` considerando iguais dois pedidos com o mesmo código. Coloque dois pedidos de mesmo código num `HashSet` e mostre que o tamanho é 1. Depois troque o parâmetro para `equals(Pedido o)` e observe o que o `@Override` diz.
+
+---
+
 ## Respostas comentadas das questões que costumam travar
 
 **Q4 (classe que não pode ser instanciada):** um construtor `private` vazio basta. Com ele declarado, o Java não cria o construtor padrão público, e ninguém de fora consegue dar `new`. Os métodos são `static` porque não dependem de estado nenhum: `Matematica.adicionar(2, 3)`.
@@ -82,5 +90,7 @@ Responda por escrito, em três ou quatro linhas cada. A prova pode ter pergunta 
 **Q7 (`setVotos` ou `receberVoto`):** `receberVoto()`. Um `setVotos(int)` permite que qualquer um escreva `setVotos(1000000)`. O método de comportamento deixa a única operação válida (somar um) protegida dentro do objeto. É isso que o slide 20 chama de "garantir que sejam usados de forma correta".
 
 **Q11 (Pilha com `Object`):** é o problema que o slide 32 de Polimorfismo mostra. Ao retirar, você recebe `Object` e precisa de cast para usar. A versão moderna seria `Pilha<T>`, que é exatamente o que a lista 3 ensina com `Caixa<T>`.
+
+**Q24:** `class Mensalista extends Funcionario implements Tributavel`. O `extends` vem **antes** do `implements`; na ordem inversa não compila.
 
 **Q22:** compilam `o1`, `d3`, `s2` e `c1`. Não compilam `s1` (mãe na caixa da filha), `c2` (primos, nenhum herda do outro) e `n1` (mãe na caixa da filha).

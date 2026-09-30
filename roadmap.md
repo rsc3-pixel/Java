@@ -138,7 +138,7 @@ Este roteiro de estudos serve para guiar seu aprendizado de Java estruturando o 
 ---
 
 ## 🎯 Módulo 7: Revisão para a Prova de POO
-**Objetivo:** Revisar para a primeira prova de POO da CESAR School (prof. Maurício Braga). Não traz matéria nova: aprofunda os pontos que a prova cobrou e que os outros módulos só tocam de passagem.
+**Objetivo:** Revisar para a primeira prova de POO da CESAR School (prof. Maurício Braga). Não traz matéria nova: usa a prova do período passado para entender o **estilo** do professor e aprofunda os temas que os outros módulos só tocam de passagem.
 *   **Tópicos:**
     *   Mapa de cada slide e lista do professor para a seção do curso onde o assunto está.
     *   Pacotes e a regra da URL invertida.
@@ -146,12 +146,13 @@ Este roteiro de estudos serve para guiar seu aprendizado de Java estruturando o 
     *   Sobrecarga contra sobrescrita, e por que `private`, `static` e `final` ficam fora do polimorfismo.
     *   Conversões: o que compila, o que não compila e o que lança `ClassCastException`.
     *   Anotações próprias com `@Retention` e `@Target`, e generics das listas (`Caixa<T>`, `Par<K, V>`).
+    *   Classes abstratas contra interfaces, `final`, `equals` e as peças do Spring nos exemplos do professor.
 *   **Recursos do Módulo:**
     *   📖 [Teoria e mapa de estudo do Módulo 7](./modulo7/teoria.md)
     *   💻 [Exemplo de Código 1 (O que será impresso?)](./modulo7/Exemplo1.java) | [Exemplo de Código 2 (A discursiva resolvida e anotação própria)](./modulo7/Exemplo2.java)
     *   📝 [Desafio Guiado 1 (Lista 3: Pedido, Autenticavel e anotação)](./modulo7/Exercicio1.java) | [Desafio Guiado 2 (Lista 3: Generics)](./modulo7/Exercicio2.java)
-    *   ✏️ [As Listas do Professor (22 Questões)](./modulo7/lista_exercicios.md)
-    *   ✏️ [Simulado no Formato da Prova (30 Questões)](./modulo7/lista_exercicios_prep.md)
+    *   ✏️ [As Listas do Professor (25 Questões)](./modulo7/lista_exercicios.md)
+    *   ✏️ [Simulado no Estilo da Prova (40 Questões)](./modulo7/lista_exercicios_prep.md)
 
 > [!NOTE]
-> Diferente dos outros módulos, as listas deste têm 22 e 30 questões, não 50: o módulo foi feito para caber na véspera da prova.
+> Diferente dos outros módulos, as listas deste têm 25 e 40 questões, não 50: o módulo foi feito para caber na véspera da prova.

@@ -12,7 +12,8 @@ import java.lang.annotation.Target;
 /*
  * EXEMPLO 2 DO MÓDULO 7: a questão discursiva resolvida + anotação própria
  *
- * Parte 1: a classe Musica da questão 01 da prova (resposta modelo).
+ * Parte 1: a classe Musica da questão 01 da prova do período passado
+ *          (resposta modelo; a discursiva deste período será outra).
  *          TENTE ESCREVER A SUA NO PAPEL ANTES DE LER ESTA.
  * Parte 2: uma anotação criada do zero e lida com o programa rodando,
  *          para provar que anotação NÃO serve só para documentar.
@@ -106,6 +107,6 @@ public class Exemplo2 {
         tocar(m2);
         tocar(new MusicaEmDestaque("Cálice", 245));
         System.out.println("-> mesmo método tocar(); a etiqueta mudou a saída.");
-        System.out.println("   Anotação não é só documentação (alternativa G da prova: FALSA).");
+        System.out.println("   Anotação não é só documentação (alternativa G do período passado: FALSA).");
     }
 }

@@ -1,9 +1,12 @@
 # Módulo 7: Revisão para a Prova de POO (CESAR School)
 
-Este módulo não ensina matéria nova. Ele existe por um motivo só: a primeira prova de POO do prof. Maurício Braga. Os módulos 2, 3, 5 e 6 já cobrem quase todo o conteúdo dos slides, mas alguns pontos que **caíram na prova** ficaram de fora ou apareceram de passagem. Eles estão aqui, com foco no jeito que o professor cobra.
+Este módulo não ensina matéria nova. Ele existe por um motivo só: a primeira prova de POO do prof. Maurício Braga. Os módulos 2, 3, 5 e 6 já cobrem quase todo o conteúdo dos slides, mas alguns pontos ficaram de fora ou apareceram de passagem. Eles estão aqui, com foco no jeito que o professor cobra.
+
+> [!IMPORTANT]
+> **Sobre a "prova" citada neste módulo:** é a prova **do período passado**, repassada por outros alunos. Ela serve para mostrar o **estilo** do professor (verdadeiro ou falso, "o que será impresso", "qual atribuição compila", uma classe discursiva), **não** o conteúdo da prova deste período. As questões novas vão ser outras, e temas que não apareceram nela (classes abstratas, interfaces, `final`, `equals`, Spring) podem cair agora. Por isso eles também estão aqui, nas seções 11 a 13.
 
 > [!TIP]
-> Ordem sugerida para a véspera: leia a seção 1 (o mapa), estude as seções 4, 5 e 6 (onde a prova tira mais pontos), rode o [Exemplo 1](../modulo7/Exemplo1.java) **tentando prever a saída antes**, e termine com o [Simulado](../modulo7/lista_exercicios_prep.md).
+> Ordem sugerida para a véspera: leia a seção 1 (o mapa), estude as seções 4, 5 e 6 (o raciocínio que o estilo do professor mais exige), depois as seções 11 a 13, rode o [Exemplo 1](../modulo7/Exemplo1.java) **tentando prever a saída antes**, e termine com o [Simulado](../modulo7/lista_exercicios_prep.md).
 
 ---
 
@@ -13,16 +16,18 @@ Este módulo não ensina matéria nova. Ele existe por um motivo só: a primeira
 | :--- | :--- | :--- |
 | Classes e objetos, construtores, `this` | [Módulo 2](../modulo2/teoria.md), seções 1 a 3 | Alta |
 | Abstração, encapsulamento, modificadores, get/set | [Módulo 2](../modulo2/teoria.md), seção 4 | Alta |
-| `static` e `final` | [Módulo 2](../modulo2/teoria.md), seção 5 + seção 7 deste módulo | Média |
-| Pacotes e a regra da URL | **Seção 2 deste módulo** | Alta (cai na discursiva) |
+| `static` e `final` | [Módulo 2](../modulo2/teoria.md), seção 5 + seções 7 e 12 deste módulo | Média |
+| Pacotes e a regra da URL | **Seção 2 deste módulo** | Alta (a discursiva do período passado cobrou) |
 | Herança, `super`, construtores na herança | [Módulo 2](../modulo2/teoria.md), seção 6 + seção 3 deste módulo | Alta |
 | Sobrecarga de métodos | [Módulo 1](../modulo1/teoria.md), seção 9 + seção 4 deste módulo | Alta |
 | Sobrescrita e polimorfismo | [Módulo 2](../modulo2/teoria.md), seção 7 + **seções 5 e 6 deste módulo** | **Máxima** |
-| Classes abstratas e interfaces | [Módulo 2](../modulo2/teoria.md), seções 8 e 9 | Média |
-| `toString`, `equals`, `hashCode` | [Módulo 3](../modulo3/teoria.md), seção 7 + seção 8 deste módulo | Média |
+| Classes abstratas e interfaces | [Módulo 2](../modulo2/teoria.md), seções 8 e 9 + **seção 11 deste módulo** | Alta |
+| `toString`, `equals`, `hashCode` | [Módulo 3](../modulo3/teoria.md), seção 7 + seções 8 e 12 deste módulo | Média |
 | Anotações (`@Override`, `@Deprecated`, criar a sua) | **Seção 9 deste módulo** | Média |
 | Generics (`Repositorio<T>`, `Caixa<T>`, `Par<K,V>`) | [Módulo 5](../modulo5/teoria.md), seção 1 + [Módulo 3](../modulo3/teoria.md), seção 3 | Média |
-| Spring Boot (conversor, cadastro com JPA) | [Módulo 6](../modulo6/teoria.md), seções 5 a 9 e 11 | Baixa |
+| Spring Boot (conversor, cadastro com JPA) | **Seção 13 deste módulo** + [Módulo 6](../modulo6/teoria.md), seções 5 a 9 e 11 | Média |
+
+As prioridades acima vêm do peso de cada tema nos slides e nas listas, e não só do que apareceu na prova do período passado.
 
 **O que você pode pular para esta prova:** Módulo 4 inteiro (exceções e arquivos), e no Módulo 5 tudo depois de generics (lambdas, streams, `Optional`, datas). Nada disso apareceu nos slides.
 
@@ -93,7 +98,7 @@ Dois erros clássicos:
 
 ## 5. Quem NÃO participa do polimorfismo: `private`, `static` e `final`
 
-Esta é a seção da questão 04 da prova. Leia devagar.
+Esta é a seção da questão 04 da prova do período passado. Leia devagar: mesmo que a questão deste período seja outra, o raciocínio de "prever a saída" é o que o professor gosta de cobrar.
 
 O polimorfismo funciona assim: quando você chama um método sobrescrevível, a JVM olha o **objeto real** na hora de executar e roda a versão dele. Isso se chama **ligação dinâmica** (*dynamic binding*).
 
@@ -105,7 +110,7 @@ Mas três tipos de método ficam fora desse mecanismo, e o compilador já amarra
 | `static` | Pertence à classe, não ao objeto. A filha pode "esconder" (*hiding*), mas não sobrescrever. |
 | `final` | Proibido sobrescrever. Tentar é erro de compilação. |
 
-**A questão da prova, passo a passo:**
+**A questão do período passado, passo a passo:**
 
 ```java
 class Alfa {
@@ -138,7 +143,7 @@ A analogia: o método `private` é uma anotação na gaveta trancada da mãe. A 
 
 ## 6. Conversões: o que compila, o que não compila e o que explode
 
-A regra de ouro, vista na prova como "qual atribuição é válida":
+A regra de ouro, cobrada na prova do período passado como "qual atribuição é válida":
 
 > **A variável de tipo mais genérico aceita um objeto de tipo mais específico. O contrário não.**
 
@@ -204,7 +209,7 @@ Anotação é uma etiqueta colada no código, que alguém lê depois: o compilad
 | Valor único | Um valor entre parênteses | `@SuppressWarnings("unchecked")` |
 | Completa | Vários pares `nome = valor` | `@Size(min = 3, max = 50, message = "...")` |
 
-**Anotações "só documentam"? Não.** Essa é a alternativa G da prova, e é **falsa**:
+**Anotações "só documentam"? Não.** Essa foi a alternativa G da prova do período passado, e é **falsa**:
 
 *   `@Override` faz o compilador **recusar** o código se a sobrescrita estiver errada.
 *   No Spring, `@Entity` faz o Hibernate **criar uma tabela**, `@GetMapping("/")` faz uma URL **responder**, `@NotBlank` faz uma requisição **ser rejeitada**. Tire a anotação e o programa se comporta diferente.
@@ -247,7 +252,107 @@ Classe que implementa a interface e não implementa todos os métodos precisa se
 
 ---
 
-## 11. Checklist da questão discursiva (tipo "Classe Musica")
+## 11. Classes abstratas × interfaces
+
+Não apareceram na prova do período passado, mas ocupam 12 slides de Polimorfismo. Boa candidata a cair agora.
+
+| | Classe abstrata | Interface |
+| :--- | :--- | :--- |
+| Palavra-chave | `abstract class` | `interface` |
+| Pode dar `new`? | Não | Não |
+| Métodos | Abstratos **e** concretos | Só abstratos (é o que os slides ensinam) |
+| Atributos | Quaisquer | Só constantes: `public static final` implícito |
+| Construtor | **Tem** (roda via `super()` das filhas) | Não tem |
+| Como a filha usa | `extends` (uma só) | `implements` (quantas quiser) |
+| Quando usar | Parentes que **compartilham código** | Classes diferentes que **cumprem o mesmo contrato** |
+
+```java
+abstract class Figura {
+    private String cor;                          // abstrata pode ter atributo
+    public Figura(String cor) { this.cor = cor; } // e construtor
+    public String getCor() { return cor; }        // e método concreto
+    public abstract double area();                // sem corpo: termina em ;
+}
+
+class Circulo extends Figura {
+    private double raio;
+    public Circulo(String cor, double raio) { super(cor); this.raio = raio; }
+
+    @Override
+    public double area() { return Math.PI * raio * raio; }  // OBRIGATÓRIO implementar
+}
+
+Figura f = new Circulo("azul", 2);   // compila: variável abstrata, objeto concreto
+Figura g = new Figura("azul");       // NÃO compila: classe abstrata
+```
+
+As regras que viram pegadinha:
+
+*   Filha concreta que **não** implementa todos os métodos abstratos **não compila**. A saída é implementar ou declarar a filha também `abstract`.
+*   Método abstrato não tem corpo, nem `{ }` vazio: termina em `;`.
+*   `abstract` e `final` juntos não compilam: um exige ser sobrescrito, o outro proíbe.
+*   `abstract` e `private` juntos também não: a filha não enxergaria o método para implementar.
+*   Um único método `abstract` já torna a classe obrigatoriamente abstrata.
+
+---
+
+## 12. `final` e `equals` na prática
+
+**`final` em atributo** precisa receber valor **uma única vez**: na declaração ou no construtor. Qualquer atribuição depois disso não compila.
+
+```java
+class Conta {
+    private final int numero;                          // sem valor aqui...
+    public Conta(int numero) { this.numero = numero; } // ...então o construtor é obrigado a dar
+    public void mudar() { numero = 5; }                // NÃO compila: cannot assign a value to final variable
+}
+```
+
+Constante de verdade é `static final`, com nome em maiúsculas: `public static final double TAXA = 0.05;`.
+
+**Sobrescrevendo `equals`** (o esqueleto que costuma ser pedido):
+
+```java
+@Override
+public boolean equals(Object o) {              // o parâmetro TEM que ser Object
+    if (this == o) return true;                // mesmo objeto: igual, sem mais perguntas
+    if (!(o instanceof Pedido)) return false;  // outro tipo (ou null): diferente
+    Pedido outro = (Pedido) o;                 // cast seguro, o instanceof garantiu
+    return this.codigo == outro.codigo;        // o critério de igualdade é seu
+}
+
+@Override
+public int hashCode() {
+    return Integer.hashCode(codigo);           // mesmo critério do equals
+}
+```
+
+A pegadinha: escrever `equals(Pedido o)` em vez de `equals(Object o)` cria uma **sobrecarga**, não uma sobrescrita. Com `@Override` o compilador denuncia; sem ele, o `HashSet` continua usando o `equals` de `Object` e o bug fica escondido. É o mesmo mecanismo do `float` contra `double` da seção 4.
+
+---
+
+## 13. Spring Boot nos exemplos do professor
+
+O professor passou dois exemplos neste período: o conversor de temperaturas e o cadastro de clientes com JPA. É pouco provável que a prova peça código Spring no papel, mas é bem possível que peça para **reconhecer** as peças, e o Spring é POO pura aplicada:
+
+| Camada | No exemplo do professor | Anotação | O conceito de POO por trás |
+| :--- | :--- | :--- | :--- |
+| Model | `Cliente`, `TemperaturaDTO` | `@Entity`, `@Id`, `@GeneratedValue` | Encapsulamento: atributos `private` com get/set |
+| Repository | `ClienteRepository` | `@Repository` | Uma **interface que herda de interface genérica**: `extends JpaRepository<Cliente, Long>` |
+| Service | `ClienteService`, `TemperaturaService` | `@Service` | Onde fica a regra de negócio (a validação de temperatura mínima, por exemplo) |
+| Controller | `ClienteController`, `TemperaturaController` | `@Controller`, `@GetMapping`, `@PostMapping` | Recebe a requisição, chama o Service, devolve o nome da página |
+
+Detalhes que dão boa questão:
+
+*   Em `JpaRepository<Cliente, Long>`, o primeiro tipo é a entidade e o segundo é o **tipo do `@Id`**. É generics com dois parâmetros, como o `Par<K, V>` da lista 3.
+*   O Controller recebe o Service **pelo construtor** (`public ClienteController(ClienteService service)`). Ninguém dá `new ClienteService()`: o Spring cria e entrega. Isso é **injeção de dependência**.
+*   `@Controller` com `return "clientes";` renderiza a página `templates/clientes.html` (Thymeleaf). Já o `@RestController` do Módulo 6 devolve os dados (JSON). É a diferença entre os exemplos do professor e o projeto do curso.
+*   `@NotBlank(message = "...")`, `@Size(min = 3, max = 50, message = "...")`, `@Email`, `@Min`, `@Max`: são as anotações **completas** e **de valor único** da seção 9, e o `@Valid` no Controller é o que faz o Spring conferi-las.
+*   `@PathVariable Long id` pega o valor de dentro da URL (`/editar/5`); `@RequestParam String valor` pega um campo do formulário.
+
+---
+
+## 14. Checklist da questão discursiva (tipo "Classe Musica")
 
 Antes de entregar, confira linha por linha:
 

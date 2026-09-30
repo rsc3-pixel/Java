@@ -1,6 +1,6 @@
-# Lista de Exercícios Prep: Módulo 7 - Simulado da Prova de POO (30 Questões)
+# Lista de Exercícios Prep: Módulo 7 - Simulado da Prova de POO (40 Questões)
 
-Simulado no formato da prova do prof. Maurício: verdadeiro ou falso, "o que será impresso", "compila ou não" e conceitos. São 30 questões, e não 50 como nos outros módulos: o objetivo é caber numa sessão de estudo na véspera. Todas as saídas foram conferidas rodando no JDK 21.
+Simulado no **estilo** da prova do prof. Maurício do período passado: verdadeiro ou falso, "o que será impresso", "compila ou não" e conceitos. Algumas questões reaproveitam aquela prova como ponto de partida, mas a prova deste período vai ser outra; por isso o Grupo E cobre temas que não apareceram nela. São 40 questões, e não 50 como nos outros módulos: o objetivo é caber numa sessão de estudo na véspera. Todas as saídas foram conferidas rodando no JDK 21.
 
 **Como usar:** responda tudo no papel, **sem rodar nada**, e só depois confira o gabarito comentado no final. Anote as que errou e releia a seção correspondente da [teoria](../modulo7/teoria.md).
 
@@ -30,7 +30,7 @@ Para cada afirmação, responda **V** ou **F**.
 
 ## Grupo B: O que será impresso? (9 a 16)
 
-### 9. A questão 04 da prova, com os dois métodos `protected`:
+### 9. A questão 04 da prova do período passado, com os dois métodos `protected`:
 ```java
 class Alfa {
     protected void showA() { System.out.print("Alfa-A "); }
@@ -243,6 +243,92 @@ Figura f = new Figura();
 
 ---
 
+## Grupo E: Temas que não caíram no período passado (31 a 40)
+
+### 31. Sobre classes abstratas, é correto afirmar:
+*   a) Não podem ter construtor, porque não podem ser instanciadas.
+*   b) Podem ter construtor, que roda quando uma subclasse concreta é instanciada.
+*   c) Só podem conter métodos abstratos.
+*   d) Não podem ter atributos, apenas constantes.
+
+### 32. Compila?
+```java
+abstract class Figura { abstract void desenhar(); }
+class Circulo extends Figura { }
+```
+*   a) Sim, `Circulo` herda `desenhar()` pronto.
+*   b) Não: `Circulo` precisa implementar `desenhar()` ou ser declarada `abstract`.
+*   c) Sim, mas lança exceção ao chamar `desenhar()`.
+*   d) Não: classe abstrata não pode ser estendida.
+
+### 33. Em `interface Limites { int MAX = 10; }`, o atributo `MAX` é:
+*   a) Um atributo de instância comum, cada objeto tem o seu.
+*   b) Implicitamente `public static final`.
+*   c) Erro de compilação: interface não tem atributos.
+*   d) `private`, porque nenhum modificador foi escrito.
+
+### 34. Qual declaração compila?
+*   a) `class A implements C, D extends B { }`
+*   b) `class A extends B, E implements C { }`
+*   c) `class A extends B implements C, D { }`
+*   d) `class A implements B extends C { }`
+
+### 35. Compila?
+```java
+class Conta {
+    private final int numero = 1;
+    void mudar() { numero = 2; }
+}
+```
+*   a) Sim, porque o método está dentro da própria classe.
+*   b) Sim, mas `numero` continua valendo 1.
+*   c) Não: atributo `final` não pode receber valor de novo.
+*   d) Não: atributo `final` precisa ser `static`.
+
+### 36. Compila?
+```java
+class Pedido {
+    int codigo;
+    @Override
+    public boolean equals(Pedido o) { return codigo == o.codigo; }
+}
+```
+*   a) Sim, é a sobrescrita correta do `equals`.
+*   b) Não: o parâmetro diferente de `Object` torna o método uma sobrecarga, e o `@Override` acusa.
+*   c) Sim, mas o `hashCode` passa a ser obrigatório.
+*   d) Não: `equals` é `final` em `Object`.
+
+### 37. `Pedido` **não** sobrescreve `equals`. O que imprime?
+```java
+Pedido p1 = new Pedido(1);
+Pedido p2 = new Pedido(1);
+System.out.println(p1.equals(p2));
+```
+*   a) `true`, os atributos são iguais.
+*   b) `false`, são dois objetos distintos na memória.
+*   c) Erro de compilação: `Pedido` não tem `equals`.
+*   d) Depende do `toString()`.
+
+### 38. No exemplo do professor, `interface ClienteRepository extends JpaRepository<Cliente, Long>`. O `Long` representa:
+*   a) A quantidade máxima de clientes da tabela.
+*   b) O tipo do atributo marcado com `@Id` em `Cliente`.
+*   c) O tipo de retorno de todos os métodos do repositório.
+*   d) Um erro: interface não pode usar `extends`.
+
+### 39. No `ClienteController` do professor, o `ClienteService` chega pelo construtor e ninguém escreve `new ClienteService()`. Esse mecanismo se chama:
+*   a) Herança.
+*   b) Sobrecarga de construtores.
+*   c) Injeção de dependência.
+*   d) Conversão implícita.
+
+### 40. Num `@Controller` do professor, `@GetMapping("/")` com `return "clientes";` faz o quê?
+*   a) Envia o texto `clientes` para o navegador.
+*   b) Renderiza a página `templates/clientes.html`.
+*   c) Redireciona para a URL `/clientes`.
+*   d) Salva um cliente no banco.
+
+---
+
 # Gabarito comentado
 
 ## Grupo A
@@ -312,3 +398,25 @@ Figura f = new Figura();
 **29. b)** `RUNTIME` faz a anotação sobreviver até a execução. O `@Target` diz **onde** colar, não **até quando** ela dura.
 
 **30. b)** Generics só aceita tipos de referência: `Integer`, não `int`. A d) inverte o lugar do diamante (`<>`), que só pode aparecer do lado do `new`.
+
+## Grupo E
+
+**31. b)** Classe abstrata tem construtor, sim. Ele roda pela cadeia de `super()` quando uma filha concreta é instanciada, e serve para inicializar os atributos que a própria abstrata declara.
+
+**32. b)** Uma classe concreta precisa implementar **todos** os métodos abstratos que herdou. A mensagem do compilador é literal: *"Circulo is not abstract and does not override abstract method desenhar()"*.
+
+**33. b)** Em interface, atributo é sempre constante: `public static final`, mesmo sem escrever. Por isso se usa `Limites.MAX`, pelo nome da interface.
+
+**34. c)** Uma única classe no `extends`, quantas interfaces quiser no `implements`, e o `extends` vem primeiro.
+
+**35. c)** `final` recebe valor uma vez só. A mensagem é *"cannot assign a value to final variable numero"*. Não importa estar dentro da própria classe.
+
+**36. b)** O `equals` de `Object` recebe `Object`. Com `Pedido` no parâmetro é outro método (sobrecarga), e o `@Override` recusa: *"method does not override or implement a method from a supertype"*. Mesma armadilha do `float` contra `double` da questão 23.
+
+**37. b)** `false`. O `equals` herdado de `Object` compara endereços, e cada `new` cria um objeto num endereço novo.
+
+**38. b)** `JpaRepository<T, ID>`: o primeiro é a entidade, o segundo é o tipo da chave primária. Em `Cliente`, o `@Id` é `private Long id`. A d) é falsa pelo mesmo motivo da questão 3: interface herda de interface.
+
+**39. c)** O Spring cria o Service (porque ele tem `@Service`) e o entrega no construtor do Controller. O objeto não fabrica suas dependências, recebe prontas.
+
+**40. b)** No `@Controller`, a `String` devolvida é o **nome da página** que o Thymeleaf renderiza. Quem devolve o dado cru é o `@RestController` (Módulo 6).
